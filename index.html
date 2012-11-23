@@ -37,8 +37,6 @@
 
 <h2>Enable</h2>
 
-<p>Simply add this to your ''repositories'' in pom.xml or settings.xml:</p>
-
 <div class="highlight"><pre><span class="nt">&lt;pluginRepository&gt;</span>
     <span class="nt">&lt;id&gt;</span>sonatype-public-repository<span class="nt">&lt;/id&gt;</span>
     <span class="nt">&lt;url&gt;</span>https://oss.sonatype.org/content/groups/public<span class="nt">&lt;/url&gt;</span>
@@ -55,17 +53,13 @@
 
 <h2>Basic Usage</h2>
 
-<p>Examples have been created and deployed into the plugin documentation which can be consulted [<a href="http://maven-download-plugin.googlecode.com/svn/site/index.html">http://maven-download-plugin.googlecode.com/svn/site/index.html</a> here] and [<a href="http://maven-download-plugin.googlecode.com/svn/site/snapshot/index.html">http://maven-download-plugin.googlecode.com/svn/site/snapshot/index.html</a> here for snapshot doc].</p>
-
-<p>Here is a list of the basic usage of each of the goal of the plugin.</p>
-
 <h3>"Artifact" goal</h3>
 
 <p>Meant to be used from anywhere on the system to download an artifact at a specific location.  Does not need a pom file to be run and can be used directly from the command line.
-Can be an alternative to [<a href="http://maven.apache.org/plugins/maven-dependency-plugin/get-mojo.html">http://maven.apache.org/plugins/maven-dependency-plugin/get-mojo.html</a> maven-dependency-plugin:get] or [<a href="http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html">http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html</a> maven-dependency-plugin:unpack] mojoes</p>
+Can be an alternative to <a href="http://maven.apache.org/plugins/maven-dependency-plugin/get-mojo.html">maven-dependency-plugin:get</a> or <a href="http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html%20maven-dependency-plugin:unpack">maven-depdendency-plugin:unpack</a> mojoes.</p>
 
-<div class="highlight"><pre>mvn com.googlecode.maven-download-plugin:maven-download-plugin:artifact -DgroupId=com.googlecode -DartifactId=maven-download-plugin -Dversion=0.1 -DoutputDirectory=temp
-</pre></div>
+<pre><code>mvn com.googlecode.maven-download-plugin:maven-download-plugin:artifact -DgroupId=com.googlecode -DartifactId=maven-download-plugin -Dversion=0.1 -DoutputDirectory=temp
+</code></pre>
 
 <h3>"WGet" goal</h3>
 
@@ -85,7 +79,8 @@ It provides caching and signature verification.</p>
             <span class="nt">&lt;/goals&gt;</span>
             <span class="nt">&lt;configuration&gt;</span>
                 <span class="nt">&lt;url&gt;</span>http://downloads.sourceforge.net/project/jbpm/jBPM%203/jbpm-3.1.4/jbpm-3.1.4.zip<span class="nt">&lt;/url&gt;</span>
-                <span class="nt">&lt;unpack&gt;</span>true<span class="nt">&lt;/unpack&gt;</span>                   <span class="nt">&lt;outputDirectory&gt;</span>${project.build.directory}/jbpm-3.1.4<span class="nt">&lt;/outputDirectory&gt;</span>
+                <span class="nt">&lt;unpack&gt;</span>true<span class="nt">&lt;/unpack&gt;</span>
+                <span class="nt">&lt;outputDirectory&gt;</span>${project.build.directory}/jbpm-3.1.4<span class="nt">&lt;/outputDirectory&gt;</span>
                 <span class="nt">&lt;md5&gt;</span>df65b5642f33676313ebe4d5b69a3fff<span class="nt">&lt;/md5&gt;</span>
             <span class="nt">&lt;/configuration&gt;</span>
         <span class="nt">&lt;/execution&gt;</span>
@@ -94,6 +89,8 @@ It provides caching and signature verification.</p>
 </pre></div>
 
 <h2>Help</h2>
+
+<h3>Maven help</h3>
 
 <p>To get basic plugin help, type in the command : </p>
 
@@ -104,6 +101,24 @@ It provides caching and signature verification.</p>
 
 <pre><code>mvn help:describe -Dplugin=com.googlecode.maven-download-plugin:maven-download-plugin -Ddetail
 </code></pre>
+
+<h3>Generated documentation</h3>
+
+<p>See also generated documentation pages <a href="http://mickaelistria.github.com/maven-download-plugin/docsite/1.0.0/">for 1.0.0</a> and <a href="http://mickaelistria.github.com/maven-download-plugin/docsite/snapshot/">for snapshot</a>.</p>
+
+<h3>Mailing-list</h3>
+
+<p>See <a href="https://groups.google.com/forum/?fromgroups#!forum/maven-download-plugin">https://groups.google.com/forum/?fromgroups#!forum/maven-download-plugin</a></p>
+
+<h3>Issue Tracker and wikis...</h3>
+
+<p>Are maintained at GitHub (links above).</p>
+
+<h2>Other links</h2>
+
+<p>Project metrics on Ohloh: <a href="https://www.ohloh.net/p/maven-download-plugin"><img src="https://www.ohloh.net/p/maven-download-plugin/widgets/project_partner_badge.gif" alt="Ohloh"></a></p>
+
+<p>Former project page at Google Code: <a href="http://code.google.com/p/maven-download-plugin/">http://code.google.com/p/maven-download-plugin/</a></p>
       </section>
     </div>
 
