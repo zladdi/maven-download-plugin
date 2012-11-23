@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Maven-download-plugin : These are a few plugins to help maven user to download different files on different protocol in part of maven build. " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Maven-download-plugin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mickaelistria/maven-download-plugin">View on GitHub</a>
+
+          <h1 id="project_title">Maven-download-plugin</h1>
+          <h2 id="project_tagline">These are a few plugins to help maven user to download different files on different protocol in part of maven build. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mickaelistria/maven-download-plugin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mickaelistria/maven-download-plugin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Maven Download Plugin</h1>
+
+<p>This is a plugin meant to help maven user to download different files on different protocol in part of maven build.</p>
+
+<h2>Enable</h2>
+
+<p>Simply add this to your ''repositories'' in pom.xml or settings.xml:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;pluginRepository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>sonatype-public-repository<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://oss.sonatype.org/content/groups/public<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;snapshots&gt;</span>
+        <span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+    <span class="nt">&lt;/snapshots&gt;</span>
+    <span class="nt">&lt;releases&gt;</span>
+        <span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+    <span class="nt">&lt;/releases&gt;</span>
+<span class="nt">&lt;/pluginRepository&gt;</span>
+</pre></div>
+
+<p>You can use some alternative repositories. See <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-4.MavenRepositories">https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-4.MavenRepositories</a> for details.</p>
+
+<h2>Basic Usage</h2>
+
+<p>Examples have been created and deployed into the plugin documentation which can be consulted [<a href="http://maven-download-plugin.googlecode.com/svn/site/index.html">http://maven-download-plugin.googlecode.com/svn/site/index.html</a> here] and [<a href="http://maven-download-plugin.googlecode.com/svn/site/snapshot/index.html">http://maven-download-plugin.googlecode.com/svn/site/snapshot/index.html</a> here for snapshot doc].</p>
+
+<p>Here is a list of the basic usage of each of the goal of the plugin.</p>
+
+<h3>"Artifact" goal</h3>
+
+<p>Meant to be used from anywhere on the system to download an artifact at a specific location.  Does not need a pom file to be run and can be used directly from the command line.
+Can be an alternative to [<a href="http://maven.apache.org/plugins/maven-dependency-plugin/get-mojo.html">http://maven.apache.org/plugins/maven-dependency-plugin/get-mojo.html</a> maven-dependency-plugin:get] or [<a href="http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html">http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html</a> maven-dependency-plugin:unpack] mojoes</p>
+
+<div class="highlight"><pre>mvn com.googlecode.maven-download-plugin:maven-download-plugin:artifact -DgroupId=com.googlecode -DartifactId=maven-download-plugin -Dversion=0.1 -DoutputDirectory=temp
+</pre></div>
+
+<h3>"WGet" goal==</h3>
+
+<p>This is meant to provide the necessary tooling for downloading anything in your Maven build without having to use Ant scripts.
+It provides caching and signature verification.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.googlecode.maven-download-plugin<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>maven-download-plugin<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;executions&gt;</span>
+        <span class="nt">&lt;execution&gt;</span>
+            <span class="nt">&lt;id&gt;</span>install-jbpm<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;phase&gt;</span>pre-integration-test<span class="nt">&lt;/phase&gt;</span>
+            <span class="nt">&lt;goals&gt;</span>
+                <span class="nt">&lt;goal&gt;</span>wget<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;/goals&gt;</span>
+            <span class="nt">&lt;configuration&gt;</span>
+                <span class="nt">&lt;url&gt;</span>http://downloads.sourceforge.net/project/jbpm/jBPM%203/jbpm-3.1.4/jbpm-3.1.4.zip<span class="nt">&lt;/url&gt;</span>
+                <span class="nt">&lt;unpack&gt;</span>true<span class="nt">&lt;/unpack&gt;</span>                   <span class="nt">&lt;outputDirectory&gt;</span>${project.build.directory}/jbpm-3.1.4<span class="nt">&lt;/outputDirectory&gt;</span>
+                <span class="nt">&lt;md5&gt;</span>df65b5642f33676313ebe4d5b69a3fff<span class="nt">&lt;/md5&gt;</span>
+            <span class="nt">&lt;/configuration&gt;</span>
+        <span class="nt">&lt;/execution&gt;</span>
+    <span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+
+<h2>Help</h2>
+
+<p>To get basic plugin help, type in the command : </p>
+
+<pre><code>mvn help:describe -Dplugin=com.googlecode.maven-download-plugin:maven-download-plugin
+</code></pre>
+
+<p>To get a more detailed help, type command : </p>
+
+<pre><code>mvn help:describe -Dplugin=com.googlecode.maven-download-plugin:maven-download-plugin -Ddetail
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Maven-download-plugin maintained by <a href="https://github.com/mickaelistria">mickaelistria</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
