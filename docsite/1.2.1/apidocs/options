@@ -1,0 +1,27 @@
+-classpath
+'/home/mistria/git/maven-download-plugin/download-maven-plugin/target/classes:/home/mistria/.m2/repository/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.jar:/home/mistria/.m2/repository/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar:/home/mistria/.m2/repository/org/codehaus/plexus/plexus-archiver/2.4.1/plexus-archiver-2.4.1.jar:/home/mistria/.m2/repository/org/apache/maven/maven-core/2.0/maven-core-2.0.jar:/home/mistria/.m2/repository/org/tukaani/xz/1.2/xz-1.2.jar:/home/mistria/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar:/home/mistria/.m2/repository/org/apache/maven/maven-project/2.0/maven-project-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/wagon/wagon-provider-api/2.4/wagon-provider-api-2.4.jar:/home/mistria/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar:/home/mistria/.m2/repository/org/apache/httpcomponents/httpcore/4.0-beta3/httpcore-4.0-beta3.jar:/home/mistria/.m2/repository/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar:/home/mistria/.m2/repository/org/apache/httpcomponents/httpclient/4.0-beta2/httpclient-4.0-beta2.jar:/home/mistria/.m2/repository/org/codehaus/plexus/plexus-io/2.0.7/plexus-io-2.0.7.jar:/home/mistria/.m2/repository/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-model/2.0/maven-model-2.0.jar:/home/mistria/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/mistria/.m2/repository/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar:/home/mistria/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar:/home/mistria/.m2/repository/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-settings/2.0/maven-settings-2.0.jar:/home/mistria/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/mistria/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar:/home/mistria/.m2/repository/org/codehaus/plexus/plexus-utils/1.5.4/plexus-utils-1.5.4.jar:/home/mistria/.m2/repository/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar:/home/mistria/.m2/repository/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar:/home/mistria/.m2/repository/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar'
+-encoding
+'UTF-8'
+-protected
+-quiet
+-sourcepath
+'/home/mistria/git/maven-download-plugin/download-maven-plugin/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2009-2014 <a href="https://github.com/maven-download-plugin/maven-download-plugin">Open-Source</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/home/mistria/git/maven-download-plugin/download-maven-plugin/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Download Plugin for Maven 1.2.1 API'
+-link
+'http://java.sun.com/javase/1.5.0/docs/api'
+-linkoffline
+'http://docs.oracle.com/javase/1.5.0/docs/api' '/home/mistria/git/maven-download-plugin/download-maven-plugin/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Download Plugin for Maven 1.2.1 API'
